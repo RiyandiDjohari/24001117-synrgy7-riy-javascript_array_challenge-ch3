@@ -1,10 +1,22 @@
 function sortCarByYearAscendingly(cars) {
   // Sangat dianjurkan untuk console.log semua hal hehe
-  console.log(cars);
+  console.log(typeof(cars));
 
   // Clone array untuk menghindari side-effect
   // Apa itu side effect?
   const result = [...cars];
+
+  for ( let i = 0 ; i < result.length; i++ ) {
+    for ( let j = 0; j < (result.length - i - 1); j++) {
+      if ( result[j].year > result[j + 1].year) {
+        let temp = result[j]
+        result[j] = result[j + 1];
+        result[j + 1] = temp;
+      }
+    }
+  }
+
+  console.log(result);
 
   // Tulis code-mu disini
 
